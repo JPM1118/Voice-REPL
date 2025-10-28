@@ -1,0 +1,29 @@
+[project]
+name = "voice-repl"
+version = "0.1.0"
+description = "A universal voice-powered REPL for coding assistants."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Jack", email = "johnmccormick1118@gmail.com" },
+]
+dependencies = [
+    "faster-whisper",
+    "openai-whisper", # Optional, for alternative model loading
+    "edge-tts",
+    "pexpect",
+    "sounddevice",
+    "numpy",
+]
+
+[project.scripts]
+voice-repl = "voice_repl.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.9.5,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.14.2",
+]
